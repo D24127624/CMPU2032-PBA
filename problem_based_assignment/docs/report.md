@@ -2,13 +2,13 @@
 
 <br/><br/>
 
-**Student Name:** *Dwight Egerton*
+**Student Name:** _Dwight Egerton_
 
-**Student ID:** *D24127624*
+**Student ID:** _D24127624_
 
-**Release Date:** *16 April 2026*
+**Release Date:** _16 April 2026_
 
-**Submission Date:** *3 May 2026 @ 23:59*
+**Submission Date:** _3 May 2026 @ 23:59_
 
 <br/><br/>
 
@@ -24,33 +24,49 @@ A hospital wants to digitize its patient handling system. You are hired to devel
 
 Design and implement a menu-driven Python program that demonstrates the use of following requirements:
 
+<div style="page-break-before:always"></div>
+
+---
+
 ## Table of Contents
 
 1. [Explanation of the data structures used](#explanation-of-the-data-structures-used)
+   - [Patient Data-Class](#1-patient-data-class)
+   - [Patient Records Linked-List](#2-patient-records-linked-list)
+   - [Emergency Queue](#3-emergency-queue)
+
 2. [Description of sorting algorithms implemented](#description-of-sorting-algorithms-implemented)
+   - [Merge Sort](#merge-sort-uses-a-divide-and-conquer-approach-)
+   - [Shell Sort](#shell-sort-uses-gap-based-insertion-sort-approach-)
+
 3. [Test cases](#test-cases)
+
 4. [Explanation of the design pattern selected](#explanation-of-the-design-pattern-selected)
+
 5. [Sample outputs of the program](#sample-outputs-of-the-program)
+
 6. [Setup and Execution](#setup-and-execution)
+   - [Create Virtual Environment](#create-virtual-environment)
+   - [Install dependencies](#install-dependencies)
+   - [Launching the Smart Hospital System Application](#launching-the-smart-hospital-system-application)
+   - [Executing all Application Code Unit-Tests](#executing-all-application-code-unit-tests)
 
 <div style="page-break-before:always"></div>
 
 ---
 
-## Project Report
-
-### Explanation of the data structures used
+## Explanation of the data structures used
 
 There were three core structures used to manage the "Smart Hospital System" data.
 The breakdown of these are listed below: -
 
-1. **[Patient Data-Class](https://github.com/D24127624/CMPU2032-PBA/blob/main/problem_based_assignment/src/pba/patient.py)**
+### 1. **[Patient Data-Class](https://github.com/D24127624/CMPU2032-PBA/blob/main/problem_based_assignment/src/pba/patient.py)**
 
     * Simple data structure `Patient`, used to store patient details loaded into the system.
     * Keep the details to the basics: `id`, `name`, `age` & `condition`.
     * Included data-type validation to ensure `id` and `age` are integers.
 
-2. **[Patient Records Linked-List](https://github.com/D24127624/CMPU2032-PBA/blob/main/problem_based_assignment/src/pba/patient_records.py)**
+### 2. **[Patient Records Linked-List](https://github.com/D24127624/CMPU2032-PBA/blob/main/problem_based_assignment/src/pba/patient_records.py)**
 
     * The `PatientRecords` class implements a simple linked-list. This class keeps track of the `head` and `tail` node in the linked list.
     * Uses a `head` node to track the start of the list, with `tail` node tracking the end of the list.
@@ -68,7 +84,7 @@ The breakdown of these are listed below: -
 
 ---
 
-3. **[Emergency Queue](https://github.com/D24127624/CMPU2032-PBA/blob/main/problem_based_assignment/src/pba/emergency_queue.py)**
+### 3. **[Emergency Queue](https://github.com/D24127624/CMPU2032-PBA/blob/main/problem_based_assignment/src/pba/emergency_queue.py)**
 
     * The `EmergencyQueue` class implements a simple queue. Uses an array to queue each `Patient` record added to the queue. New records will be added to the end of the array (enqueue), whilst the next `Patient` served will be taken from the start of the array. Thus, implementing a First-in, First-out (FIFO) queue.
     * This queue can be accessed via the following operations: -
@@ -77,19 +93,19 @@ The breakdown of these are listed below: -
         - *View Queue* `view_queue() -> list[Patient]`: returns all the `Patient` records in the linked-list as an `Array`.
         - *Is Empty* `is_empty()`: checks if the queue state is currently *empty* and will return a `boolean` result to the respective calling program.
 
-### Description of sorting algorithms implemented
+## Description of sorting algorithms implemented
 
 Per the requirements for this project, two sorting algorythims needed to be implemented and used with different use cases.
 These implementations will respectivly sort the [`PatientRecords`](https://github.com/D24127624/CMPU2032-PBA/blob/main/problem_based_assignment/src/pba/patient_records.py) linked-list.
 Both implementations support dynamic sorting by any patient attribute through a configurable `key` parameter.
 
-* **[Merge Sort](https://github.com/D24127624/CMPU2032-PBA/blob/main/problem_based_assignment/src/pba/sorting/merge_sort.py)**: uses a divide-and-conquer approach ...
+### **[Merge Sort](https://github.com/D24127624/CMPU2032-PBA/blob/main/problem_based_assignment/src/pba/sorting/merge_sort.py)**: uses a divide-and-conquer approach ...
 
     - Will recursivly divide the list into halves (used a slow/fast pointer technique to find the middle of the linked-list)
     - Then sort each half independently before merginf the halves back together while maintaining order
     - Time Complexity: O(log n)
 
-* **[Shell Sort](https://github.com/D24127624/CMPU2032-PBA/blob/main/problem_based_assignment/src/pba/sorting/shell_sort.py)**: uses gap-based insertion sort approach ...
+### **[Shell Sort](https://github.com/D24127624/CMPU2032-PBA/blob/main/problem_based_assignment/src/pba/sorting/shell_sort.py)**: uses gap-based insertion sort approach ...
 
     - Needed to first convert the linked-list to an array to be able to perform this sort
     - Will perform multiple passes with decreasing gap intervals
@@ -100,19 +116,19 @@ Both implementations support dynamic sorting by any patient attribute through a 
 
 ---
 
-### Test cases
+## Test cases
 
-I have added several tests to the [`tests`](https://github.com/D24127624/CMPU2032-PBA/blob/main/tests/) folder in this project. These tests have been created to validate several core functions of the "Smart Health System" application. Have coded test cases that cover positive and negative use-case scenarios.
+I have added several tests to the [`tests`](https://github.com/D24127624/CMPU2032-PBA/tree/main/problem_based_assignment/tests/) folder in this project. These tests have been created to validate several core functions of the "Smart Health System" application. Have coded test cases that cover positive and negative use-case scenarios.
 
 Each test case is an insular unit-test (only testing the functionality of the respective target class). When there are any dependencies on other objects (for example, adding a patient depends on the patient records linked-list) a MOCK is used to simulate the external operations.
 
 Some examples of the tests created are: -
 
-* [`test_patient.py`](https://github.com/D24127624/CMPU2032-PBA/blob/main/tests/test_patient.py): covers test cases to verify normal `Patient` creation and "to string" conversion, as-well-as negative scenario where an invalid age is entered.
+- [`test_patient.py`](https://github.com/D24127624/CMPU2032-PBA/blob/main/tests/test_patient.py): covers test cases to verify normal `Patient` creation and "to string" conversion, as-well-as negative scenario where an invalid age is entered.
 
-* [`test_emergency_queue.py`](https://github.com/D24127624/CMPU2032-PBA/blob/main/tests/test_emergency_queue.py): covers test cases for several of the `EmergencyQueue` class operations (would have scenarios for every function in a real application). Additionally, have test cases to verify negative scenarios, like adding a `Patient` to the queue twice.
+- [`test_emergency_queue.py`](https://github.com/D24127624/CMPU2032-PBA/blob/main/tests/test_emergency_queue.py): covers test cases for several of the `EmergencyQueue` class operations (would have scenarios for every function in a real application). Additionally, have test cases to verify negative scenarios, like adding a `Patient` to the queue twice.
 
-* [`test_add_patient.py`](https://github.com/D24127624/CMPU2032-PBA/blob/main/tests/menu/test_add_patient.py): similar coverage of `AddPatient` class operations is provided by in these test cases, with negative test to ensure duplicate `Patient` records cannot get added to the linked-list.
+- [`test_add_patient.py`](https://github.com/D24127624/CMPU2032-PBA/blob/main/tests/menu/test_add_patient.py): similar coverage of `AddPatient` class operations is provided by in these test cases, with negative test to ensure duplicate `Patient` records cannot get added to the linked-list.
 
 The recording below shows how the tests can be executed.
 
@@ -120,13 +136,13 @@ The recording below shows how the tests can be executed.
     <img src="./images/run_tests.gif" style="width: 450px;"/>
 </p>
 
-> Animated GIF cannot be viewed in PDF, alternatively view the recording [here](./recordings/run_tests.mp4).
+> Animated GIF cannot be viewed in generate PDF file, alternatively download/view the recording [here](https://github.com/D24127624/CMPU2032-PBA/raw/refs/heads/main/problem_based_assignment/docs/recordings/run_tests.mp4).
 
 <div style="page-break-before:always"></div>
 
 ---
 
-### Explanation of the design pattern selected
+## Explanation of the design pattern selected
 
 I couldn't find any good design-pattern use-cases for this project as its simplicity doesn't require such additional complexity.
 
@@ -138,63 +154,63 @@ I did use the `Builder` (a creational design-pattern) to construct [`MainMenu`](
 
 ---
 
-### Sample outputs of the program
+## Sample outputs of the program
 
-* Adding a new patient to the linked-list
+- Adding a new patient to the linked-list
 
 <p align="center">
     <img src="./images/add_patient.gif" style="width: 450px;"/>
 </p>
 
-> Animated GIF cannot be viewed in PDF, alternatively view the recording [here](./recordings/add_patient.mp4).
+> Animated GIF cannot be viewed in generate PDF file, alternatively download/view the recording [here](https://github.com/D24127624/CMPU2032-PBA/raw/refs/heads/main/problem_based_assignment/docs/recordings/add_patient.mp4).
 
-* Removing an existing patient from the linked-list
+- Removing an existing patient from the linked-list
 
 <p align="center">
     <img src="./images/delete_patient.gif" style="width: 450px;"/>
 </p>
 
-> Animated GIF cannot be viewed in PDF, alternatively view the recording [here](./recordings/delete_patient.mp4).
+> Animated GIF cannot be viewed in generate PDF file, alternatively download/view the recording [here](https://github.com/D24127624/CMPU2032-PBA/raw/refs/heads/main/problem_based_assignment/docs/recordings/delete_patient.mp4).
 
 <div style="page-break-before:always"></div>
 
 ---
 
-* Adding a patient to the emergency-queue
+- Adding a patient to the emergency-queue
 
 <p align="center">
     <img src="./images/enqueue_patient.gif" style="width: 450px;"/>
 </p>
 
-> Animated GIF cannot be viewed in PDF, alternatively view the recording [here](./recordings/enqueue_patient.mp4).
+> Animated GIF cannot be viewed in generate PDF file, alternatively download/view the recording [here](https://github.com/D24127624/CMPU2032-PBA/raw/refs/heads/main/problem_based_assignment/docs/recordings/enqueue_patient.mp4).
 
-* Serving the next patient in the emergency-queue
+- Serving the next patient in the emergency-queue
 
 <p align="center">
     <img src="./images/dequeue_patient.gif" style="width: 450px;"/>
 </p>
 
-> Animated GIF cannot be viewed in PDF, alternatively view the recording [here](./recordings/dequeue_patient.mp4).
+> Animated GIF cannot be viewed in generate PDF file, alternatively download/view the recording [here](https://github.com/D24127624/CMPU2032-PBA/raw/refs/heads/main/problem_based_assignment/docs/recordings/dequeue_patient.mp4).
 
 <div style="page-break-before:always"></div>
 
 ---
 
-* Sorting the linked-list by ID
+- Sorting the linked-list by ID
 
 <p align="center">
     <img src="./images/sort_by_id.gif" style="width: 450px;"/>
 </p>
 
-> Animated GIF cannot be viewed in PDF, alternatively view the recording [here](./recordings/sort_by_id.mp4).
+> Animated GIF cannot be viewed in generate PDF file, alternatively download/view the recording [here](https://github.com/D24127624/CMPU2032-PBA/raw/refs/heads/main/problem_based_assignment/docs/recordings/sort_by_id.mp4).
 
-* Sorting the linked-list by AGE
+- Sorting the linked-list by AGE
 
 <p align="center">
     <img src="./images/sort_by_age.gif" style="width: 450px;"/>
 </p>
 
-> Animated GIF cannot be viewed in PDF, alternatively view the recording [here](./recordings/sort_by_age.mp4).
+> Animated GIF cannot be viewed in generate PDF file, alternatively download/view the recording [here](https://github.com/D24127624/CMPU2032-PBA/raw/refs/heads/main/problem_based_assignment/docs/recordings/sort_by_age.mp4).
 
 <div style="page-break-before:always"></div>
 
@@ -208,13 +224,15 @@ To ensure this project does not impact any other parts of your system, a virtual
 The assumption is that you have Python (version 3.11 or later) installed on your computer.
 This can simple be done by executing the following commands: -
 
-* Windows ...
+- Windows ...
+
 ```cmd
 python -m venv .venv
 .venv\Scripts\activate
 ```
 
-* Mac, Linux or WSL ...
+- Mac, Linux or WSL ...
+
 ```bash
 python3 -m venv .venv
 source .venv/bin/activate
@@ -252,4 +270,3 @@ To run the unit tests: -
 ```bash
 poetry run tests
 ```
-

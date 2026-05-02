@@ -8,7 +8,7 @@ class GetAllEmployees(MenuOption):
         self.employee_service = employee_service
 
     def __str__(self) -> str:
-        return 'View Employees'
+        return 'Display all employee records'
 
     def execute(self):
         '''Command-line menu option execution to display all available employee records.'''

@@ -8,7 +8,7 @@ class RemoveEmployee(MenuOption):
         self.employee_service = employee_service
 
     def __str__(self) -> str:
-        return 'Remove Employee'
+        return 'Remove an employee recordAdd Employee'
 
     def execute(self) -> str:
         '''Command-line menu option execution to remove an employee from the backend database.'''

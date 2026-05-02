@@ -10,7 +10,7 @@ class ModifyEmployee(MenuOption):
         self.employee_service = employee_service
 
     def __str__(self) -> str:
-        return 'Modify Employee'
+        return 'Update an employee record'
 
     def execute(self) -> str:
         '''Command-line menu option execution to update an employee to the backend database.'''

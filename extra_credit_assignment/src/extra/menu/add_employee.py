@@ -10,7 +10,7 @@ class AddEmployee(MenuOption):
         self.employee_service = employee_service
 
     def __str__(self) -> str:
-        return 'Add Employee'
+        return 'Add new employee record'
 
     def execute(self) -> str:
         '''Command-line menu option execution to add an employee to the backend database.'''

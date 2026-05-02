@@ -22,7 +22,6 @@ def main():
         .with_menu_option(ModifyEmployee(employee_service))
         .with_menu_option(RemoveEmployee(employee_service))
         .with_menu_option('Exit', 10)
-        .with_test_mode()
     )
     menu_builder.build().run()
 
