@@ -44,13 +44,13 @@ Design and implement a menu-driven Python program that demonstrates the use of f
 There were three core structures used to manage the "Smart Hospital System" data.
 The breakdown of these are listed below: -
 
-1. **[Patient Data-Class](https://github.com/D24127624/CMPU2032-PBA/blob/main/problam_based_assignment/src/pba/patient.py)**
+1. **[Patient Data-Class](https://github.com/D24127624/CMPU2032-PBA/blob/main/problem_based_assignment/src/pba/patient.py)**
 
     * Simple data structure `Patient`, used to store patient details loaded into the system.
     * Keep the details to the basics: `id`, `name`, `age` & `condition`.
     * Included data-type validation to ensure `id` and `age` are integers.
 
-2. **[Patient Records Linked-List](https://github.com/D24127624/CMPU2032-PBA/blob/main/problam_based_assignment/src/pba/patient_records.py)**
+2. **[Patient Records Linked-List](https://github.com/D24127624/CMPU2032-PBA/blob/main/problem_based_assignment/src/pba/patient_records.py)**
 
     * The `PatientRecords` class implements a simple linked-list. This class keeps track of the `head` and `tail` node in the linked list.
     * Uses a `head` node to track the start of the list, with `tail` node tracking the end of the list.
@@ -68,7 +68,7 @@ The breakdown of these are listed below: -
 
 ---
 
-3. **[Emergency Queue](https://github.com/D24127624/CMPU2032-PBA/blob/main/problam_based_assignment/src/pba/emergency_queue.py)**
+3. **[Emergency Queue](https://github.com/D24127624/CMPU2032-PBA/blob/main/problem_based_assignment/src/pba/emergency_queue.py)**
 
     * The `EmergencyQueue` class implements a simple queue. Uses an array to queue each `Patient` record added to the queue. New records will be added to the end of the array (enqueue), whilst the next `Patient` served will be taken from the start of the array. Thus, implementing a First-in, First-out (FIFO) queue.
     * This queue can be accessed via the following operations: -
@@ -80,16 +80,16 @@ The breakdown of these are listed below: -
 ### Description of sorting algorithms implemented
 
 Per the requirements for this project, two sorting algorythims needed to be implemented and used with different use cases.
-These implementations will respectivly sort the [`PatientRecords`](https://github.com/D24127624/CMPU2032-PBA/blob/main/problam_based_assignment/src/pba/patient_records.py) linked-list.
+These implementations will respectivly sort the [`PatientRecords`](https://github.com/D24127624/CMPU2032-PBA/blob/main/problem_based_assignment/src/pba/patient_records.py) linked-list.
 Both implementations support dynamic sorting by any patient attribute through a configurable `key` parameter.
 
-* **[Merge Sort](https://github.com/D24127624/CMPU2032-PBA/blob/main/problam_based_assignment/src/pba/sorting/merge_sort.py)**: uses a divide-and-conquer approach ...
+* **[Merge Sort](https://github.com/D24127624/CMPU2032-PBA/blob/main/problem_based_assignment/src/pba/sorting/merge_sort.py)**: uses a divide-and-conquer approach ...
 
     - Will recursivly divide the list into halves (used a slow/fast pointer technique to find the middle of the linked-list)
     - Then sort each half independently before merginf the halves back together while maintaining order
     - Time Complexity: O(log n)
 
-* **[Shell Sort](https://github.com/D24127624/CMPU2032-PBA/blob/main/problam_based_assignment/src/pba/sorting/shell_sort.py)**: uses gap-based insertion sort approach ...
+* **[Shell Sort](https://github.com/D24127624/CMPU2032-PBA/blob/main/problem_based_assignment/src/pba/sorting/shell_sort.py)**: uses gap-based insertion sort approach ...
 
     - Needed to first convert the linked-list to an array to be able to perform this sort
     - Will perform multiple passes with decreasing gap intervals
@@ -130,9 +130,9 @@ The recording below shows how the tests can be executed.
 
 I couldn't find any good design-pattern use-cases for this project as its simplicity doesn't require such additional complexity.
 
-One area I thought could use a `Singleton` design-pattern, was for the emergency queue ([`EmergenceQueue`](https://github.com/D24127624/CMPU2032-PBA/blob/main/problam_based_assignment/src/pba/emergency_queue.py)) and patient-records linked-list ([`PatientRecords`](https://github.com/D24127624/CMPU2032-PBA/blob/main/problam_based_assignment/src/pba/patient_records.py)). This would simplify the need to pass an instance of these class objects to several other (e.g. main-menu & menu option) classes but would make unit-testing more complex.
+One area I thought could use a `Singleton` design-pattern, was for the emergency queue ([`EmergenceQueue`](https://github.com/D24127624/CMPU2032-PBA/blob/main/problem_based_assignment/src/pba/emergency_queue.py)) and patient-records linked-list ([`PatientRecords`](https://github.com/D24127624/CMPU2032-PBA/blob/main/problem_based_assignment/src/pba/patient_records.py)). This would simplify the need to pass an instance of these class objects to several other (e.g. main-menu & menu option) classes but would make unit-testing more complex.
 
-I did use the `Builder` (a creational design-pattern) to construct [`MainMenu`](https://github.com/D24127624/CMPU2032-PBA/blob/main/problam_based_assignment/src/pba/menu/main_menu.py) class object. This pattern is implemented in [`MenuBuilder`](https://github.com/D24127624/CMPU2032-PBA/blob/main/problam_based_assignment/src/pba/menu/menu_builder.py) class and breaks down the creation of an object into separate steps. This would typically be more suitable to use-cases where there would be multiple instances of the class object with varying configurations. This reduces the need to have multiple constructors for different uses or a very complex constructor that takes a large number of attributes.
+I did use the `Builder` (a creational design-pattern) to construct [`MainMenu`](https://github.com/D24127624/CMPU2032-PBA/blob/main/problem_based_assignment/src/pba/menu/main_menu.py) class object. This pattern is implemented in [`MenuBuilder`](https://github.com/D24127624/CMPU2032-PBA/blob/main/problem_based_assignment/src/pba/menu/menu_builder.py) class and breaks down the creation of an object into separate steps. This would typically be more suitable to use-cases where there would be multiple instances of the class object with varying configurations. This reduces the need to have multiple constructors for different uses or a very complex constructor that takes a large number of attributes.
 
 <div style="page-break-before:always"></div>
 
