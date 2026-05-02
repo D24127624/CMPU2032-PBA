@@ -22,12 +22,16 @@
 
 3. [Project Report](./problem_based_assignment/docs/report.md) [[PDF](./problem_based_assignment/docs/report.pdf)]
 
+4. [Video](./problem_based_assignment/docs/recordings/project_report.mp4)
+
 
 ## Extra Credit Assignment Documentation
 
 1. [Requirements](./extra_credit_assignment/docs/requirements.md) [[PDF](./extra_credit_assignment/docs/requirements.pdf)]
 
 2. [Report](./extra_credit_assignment/docs/report.md) [[PDF](./extra_credit_assignment/docs/report.pdf)]
+
+3. [Video](./extra_credit_assignment/docs/recordings/extra_credit_report.mp4)
 
 
 ## Notes

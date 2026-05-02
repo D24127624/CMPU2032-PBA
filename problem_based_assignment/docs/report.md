@@ -62,23 +62,23 @@ The breakdown of these are listed below: -
 
 ### 1. **[Patient Data-Class](https://github.com/D24127624/CMPU2032-PBA/blob/main/problem_based_assignment/src/pba/patient.py)**
 
-    * Simple data structure `Patient`, used to store patient details loaded into the system.
-    * Keep the details to the basics: `id`, `name`, `age` & `condition`.
-    * Included data-type validation to ensure `id` and `age` are integers.
+* Simple data structure `Patient`, used to store patient details loaded into the system.
+* Keep the details to the basics: `id`, `name`, `age` & `condition`.
+* Included data-type validation to ensure `id` and `age` are integers.
 
 ### 2. **[Patient Records Linked-List](https://github.com/D24127624/CMPU2032-PBA/blob/main/problem_based_assignment/src/pba/patient_records.py)**
 
-    * The `PatientRecords` class implements a simple linked-list. This class keeps track of the `head` and `tail` node in the linked list.
-    * Uses a `head` node to track the start of the list, with `tail` node tracking the end of the list.
-    * There is a `LinkNode` data-class that is used to manage/store each node in the linked-list.
-    * The `LinkNode` will hold the `Patient` record as-well-as the next `LinkNode` in the list (if applicable).
-    * This linked-list can bee accessed via the following operations: -
-        - *Add Patient* `add_patient(patient: Patient) -> bool`: adds a new `Patient` record to the end of the linked list. Returns a `boolean` to the calling program to indicate if this was completed successfully.
-        - *Delete Patient* `delete_patient(patient_id: int) -> Patient | None`: removes a `Patient` record from the list based on the provided `patient_id`. This will also ensure that the list linking is maintained. The removed `Patient` record (or `None` if not found) is returned to the calling program.
-        - *Find Patient* `find_patient(patient_id: int) -> Patient | None`: using the provided `ID`, find and return the respective `Patient` record. This will return the found `Patient` record or `None` if not found.
-        - *List Patients* `list_patients() -> list[Patient]`: returns all the `Patient` records in the linked-list as an `Array`.
-        - *Clear List* `clear_list()`: clears all the `Patient` records and resets the linked-list.
-        - *Next ID* `next_id() -> int`: generates a random 4-digit ID for each new `Patient` record.
+* The `PatientRecords` class implements a simple linked-list. This class keeps track of the `head` and `tail` node in the linked list.
+* Uses a `head` node to track the start of the list, with `tail` node tracking the end of the list.
+* There is a `LinkNode` data-class that is used to manage/store each node in the linked-list.
+* The `LinkNode` will hold the `Patient` record as-well-as the next `LinkNode` in the list (if applicable).
+* This linked-list can bee accessed via the following operations: -
+    - *Add Patient* `add_patient(patient: Patient) -> bool`: adds a new `Patient` record to the end of the linked list. Returns a `boolean` to the calling program to indicate if this was completed successfully.
+    - *Delete Patient* `delete_patient(patient_id: int) -> Patient | None`: removes a `Patient` record from the list based on the provided `patient_id`. This will also ensure that the list linking is maintained. The removed `Patient` record (or `None` if not found) is returned to the calling program.
+    - *Find Patient* `find_patient(patient_id: int) -> Patient | None`: using the provided `ID`, find and return the respective `Patient` record. This will return the found `Patient` record or `None` if not found.
+    - *List Patients* `list_patients() -> list[Patient]`: returns all the `Patient` records in the linked-list as an `Array`.
+    - *Clear List* `clear_list()`: clears all the `Patient` records and resets the linked-list.
+    - *Next ID* `next_id() -> int`: generates a random 4-digit ID for each new `Patient` record.
 
 <div style="page-break-before:always"></div>
 
@@ -86,12 +86,12 @@ The breakdown of these are listed below: -
 
 ### 3. **[Emergency Queue](https://github.com/D24127624/CMPU2032-PBA/blob/main/problem_based_assignment/src/pba/emergency_queue.py)**
 
-    * The `EmergencyQueue` class implements a simple queue. Uses an array to queue each `Patient` record added to the queue. New records will be added to the end of the array (enqueue), whilst the next `Patient` served will be taken from the start of the array. Thus, implementing a First-in, First-out (FIFO) queue.
-    * This queue can be accessed via the following operations: -
-        - *Enqueue Patient* `enqueue_patient(patient: Patient) -> bool`: adds (enqueue) a `Patient` recorded to the end of the queue. There is a check to ensure that the `Patient` is not already in the in the queue. Will return a `boolean` to the calling program if the operation is completed successfully.
-        - *Dequeue Patient* `dequeue_patient() -> Patient | None`: removes (dequeue) the first `Patient` record from the queue. Returns the respective `Patient` record (or `None` if queue is empty) to the calling program.
-        - *View Queue* `view_queue() -> list[Patient]`: returns all the `Patient` records in the linked-list as an `Array`.
-        - *Is Empty* `is_empty()`: checks if the queue state is currently *empty* and will return a `boolean` result to the respective calling program.
+* The `EmergencyQueue` class implements a simple queue. Uses an array to queue each `Patient` record added to the queue. New records will be added to the end of the array (enqueue), whilst the next `Patient` served will be taken from the start of the array. Thus, implementing a First-in, First-out (FIFO) queue.
+* This queue can be accessed via the following operations: -
+    - *Enqueue Patient* `enqueue_patient(patient: Patient) -> bool`: adds (enqueue) a `Patient` recorded to the end of the queue. There is a check to ensure that the `Patient` is not already in the in the queue. Will return a `boolean` to the calling program if the operation is completed successfully.
+    - *Dequeue Patient* `dequeue_patient() -> Patient | None`: removes (dequeue) the first `Patient` record from the queue. Returns the respective `Patient` record (or `None` if queue is empty) to the calling program.
+    - *View Queue* `view_queue() -> list[Patient]`: returns all the `Patient` records in the linked-list as an `Array`.
+    - *Is Empty* `is_empty()`: checks if the queue state is currently *empty* and will return a `boolean` result to the respective calling program.
 
 ## Description of sorting algorithms implemented
 
@@ -101,16 +101,16 @@ Both implementations support dynamic sorting by any patient attribute through a 
 
 ### **[Merge Sort](https://github.com/D24127624/CMPU2032-PBA/blob/main/problem_based_assignment/src/pba/sorting/merge_sort.py)**: uses a divide-and-conquer approach ...
 
-    - Will recursivly divide the list into halves (used a slow/fast pointer technique to find the middle of the linked-list)
-    - Then sort each half independently before merginf the halves back together while maintaining order
-    - Time Complexity: O(log n)
+* Will recursivly divide the list into halves (used a slow/fast pointer technique to find the middle of the linked-list)
+* Then sort each half independently before merginf the halves back together while maintaining order
+* Time Complexity: O(log n)
 
 ### **[Shell Sort](https://github.com/D24127624/CMPU2032-PBA/blob/main/problem_based_assignment/src/pba/sorting/shell_sort.py)**: uses gap-based insertion sort approach ...
 
-    - Needed to first convert the linked-list to an array to be able to perform this sort
-    - Will perform multiple passes with decreasing gap intervals
-    - Gap reduces by half each iteration until gap equals 1
-    - Time Complexity: O(log n) to O(n²)
+* Needed to first convert the linked-list to an array to be able to perform this sort
+* Will perform multiple passes with decreasing gap intervals
+* Gap reduces by half each iteration until gap equals 1
+* Time Comp lexity: O(log n) to O(n²)
 
 <div style="page-break-before:always"></div>
 
@@ -124,11 +124,11 @@ Each test case is an insular unit-test (only testing the functionality of the re
 
 Some examples of the tests created are: -
 
-- [`test_patient.py`](https://github.com/D24127624/CMPU2032-PBA/blob/main/tests/test_patient.py): covers test cases to verify normal `Patient` creation and "to string" conversion, as-well-as negative scenario where an invalid age is entered.
+* [`test_patient.py`](https://github.com/D24127624/CMPU2032-PBA/blob/main/tests/test_patient.py): covers test cases to verify normal `Patient` creation and "to string" conversion, as-well-as negative scenario where an invalid age is entered.
 
-- [`test_emergency_queue.py`](https://github.com/D24127624/CMPU2032-PBA/blob/main/tests/test_emergency_queue.py): covers test cases for several of the `EmergencyQueue` class operations (would have scenarios for every function in a real application). Additionally, have test cases to verify negative scenarios, like adding a `Patient` to the queue twice.
+* [`test_emergency_queue.py`](https://github.com/D24127624/CMPU2032-PBA/blob/main/tests/test_emergency_queue.py): covers test cases for several of the `EmergencyQueue` class operations (would have scenarios for every function in a real application). Additionally, have test cases to verify negative scenarios, like adding a `Patient` to the queue twice.
 
-- [`test_add_patient.py`](https://github.com/D24127624/CMPU2032-PBA/blob/main/tests/menu/test_add_patient.py): similar coverage of `AddPatient` class operations is provided by in these test cases, with negative test to ensure duplicate `Patient` records cannot get added to the linked-list.
+* [`test_add_patient.py`](https://github.com/D24127624/CMPU2032-PBA/blob/main/tests/menu/test_add_patient.py): similar coverage of `AddPatient` class operations is provided by in these test cases, with negative test to ensure duplicate `Patient` records cannot get added to the linked-list.
 
 The recording below shows how the tests can be executed.
 
@@ -156,7 +156,7 @@ I did use the `Builder` (a creational design-pattern) to construct [`MainMenu`](
 
 ## Sample outputs of the program
 
-- Adding a new patient to the linked-list
+* Adding a new patient to the linked-list
 
 <p align="center">
     <img src="./images/add_patient.gif" style="width: 450px;"/>
@@ -164,7 +164,7 @@ I did use the `Builder` (a creational design-pattern) to construct [`MainMenu`](
 
 > Animated GIF cannot be viewed in generate PDF file, alternatively download/view the recording [here](https://github.com/D24127624/CMPU2032-PBA/raw/refs/heads/main/problem_based_assignment/docs/recordings/add_patient.mp4).
 
-- Removing an existing patient from the linked-list
+* Removing an existing patient from the linked-list
 
 <p align="center">
     <img src="./images/delete_patient.gif" style="width: 450px;"/>
@@ -176,7 +176,7 @@ I did use the `Builder` (a creational design-pattern) to construct [`MainMenu`](
 
 ---
 
-- Adding a patient to the emergency-queue
+* Adding a patient to the emergency-queue
 
 <p align="center">
     <img src="./images/enqueue_patient.gif" style="width: 450px;"/>
@@ -184,7 +184,7 @@ I did use the `Builder` (a creational design-pattern) to construct [`MainMenu`](
 
 > Animated GIF cannot be viewed in generate PDF file, alternatively download/view the recording [here](https://github.com/D24127624/CMPU2032-PBA/raw/refs/heads/main/problem_based_assignment/docs/recordings/enqueue_patient.mp4).
 
-- Serving the next patient in the emergency-queue
+* Serving the next patient in the emergency-queue
 
 <p align="center">
     <img src="./images/dequeue_patient.gif" style="width: 450px;"/>
@@ -196,7 +196,7 @@ I did use the `Builder` (a creational design-pattern) to construct [`MainMenu`](
 
 ---
 
-- Sorting the linked-list by ID
+* Sorting the linked-list by ID
 
 <p align="center">
     <img src="./images/sort_by_id.gif" style="width: 450px;"/>
@@ -204,7 +204,7 @@ I did use the `Builder` (a creational design-pattern) to construct [`MainMenu`](
 
 > Animated GIF cannot be viewed in generate PDF file, alternatively download/view the recording [here](https://github.com/D24127624/CMPU2032-PBA/raw/refs/heads/main/problem_based_assignment/docs/recordings/sort_by_id.mp4).
 
-- Sorting the linked-list by AGE
+* Sorting the linked-list by AGE
 
 <p align="center">
     <img src="./images/sort_by_age.gif" style="width: 450px;"/>
@@ -224,14 +224,14 @@ To ensure this project does not impact any other parts of your system, a virtual
 The assumption is that you have Python (version 3.11 or later) installed on your computer.
 This can simple be done by executing the following commands: -
 
-- Windows ...
+* Windows ...
 
 ```cmd
 python -m venv .venv
 .venv\Scripts\activate
 ```
 
-- Mac, Linux or WSL ...
+* Mac, Linux or WSL ...
 
 ```bash
 python3 -m venv .venv

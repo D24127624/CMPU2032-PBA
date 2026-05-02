@@ -143,12 +143,3 @@ To run the command-line interface: -
 ```bash
 poerty run main
 ```
-
-### Executing all Application Code Unit-Tests
-
-To run the unit tests: -
-
-```bash
-poetry run tests
-```
-
