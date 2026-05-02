@@ -1,0 +1,13 @@
+[tool.poetry]
+name = "extra"
+version = "0.1.0"
+description = "Extra Credit Assignment"
+authors = ["Dwight Egerton"]
+packages = [{include = "extra", from = "src"}]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+dataset = "^1.6.2"
+
+[tool.poetry.scripts]
+main = "extra.__main__:main"

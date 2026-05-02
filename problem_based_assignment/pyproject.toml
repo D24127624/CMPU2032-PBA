@@ -1,0 +1,22 @@
+[tool.poetry]
+name = "pba"
+version = "0.1.0"
+description = "Problem Based Assignment"
+authors = ["Dwight Egerton"]
+packages = [{include = "pba", from = "src"}]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+
+[tool.poetry.dev-dependencies]
+pytest = "^9.0"
+
+[tool.pytest.ini_options]
+pythonpath = "src"
+addopts = [
+    "--import-mode=importlib",
+]
+
+[tool.poetry.scripts]
+main = "pba.__main__:main"
+tests = "pytest:main"
